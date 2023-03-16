@@ -1,0 +1,38 @@
+#colors(){
+    c_brown: #44281d;
+    c_cream: #e4a788;
+    c_yellow: #f0e14a;
+    c_green: #97ce4c;
+    c_pink: #e89ac7;
+    c_blue: #719ECE;
+}
+
+.add-box-blur{
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    
+    border: 2px solid #colors[c_green];
+    border-radius: 10px;
+}
+
+.buttonProps{
+    background: none;
+    color: #colors[c_green];
+    
+    border: 2px solid #colors[c_green];
+    border-radius: 10px;
+
+    box-shadow: 1px 1px black;
+    text-shadow: 1px 1px black;
+
+    &:hover{
+        border-color: #colors[c_blue];
+        color: #colors[c_blue];
+        
+        box-shadow: 0 0 10px #colors[c_blue];
+    }
+}
+
+.setFont{
+    font-family: "Get Schwifty";
+}

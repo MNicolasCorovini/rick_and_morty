@@ -1,0 +1,58 @@
+@import url('../../Less/variables.less');
+
+.contenedor{
+    position: relative;
+    display: flex;
+    gap: 0 2em;
+
+    margin: auto;
+    padding: 2em;
+
+    width: fit-content;
+    height: fit-content;
+
+    .add-box-blur();
+
+    button{
+        position: absolute;
+        left: 1;
+        top: 1;
+
+        color: #colors[c_green];
+        background: none;
+        border: 2px solid #colors[c_green];
+        border-radius: 10px;
+        
+        font-size: 2em;
+        font-weight: bold;
+
+        width: 40px;
+        height: 40px;
+
+    }
+
+    .contImg{
+        img{
+            border-radius: 100%;
+        }
+    }
+
+    .contDesc{
+        color: #colors[c_green];
+
+        h2{
+            color: #colors[c_blue];
+            font-size: 2em;
+        }
+
+        p{
+            font-size: 1.2em;
+            
+            span{
+                color: #colors[c_blue];
+    
+            }
+        }
+        
+    }
+}

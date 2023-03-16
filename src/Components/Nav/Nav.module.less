@@ -1,0 +1,39 @@
+@import url('../../Less/variables.less');
+
+.navCont{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    width: 90%;
+
+    margin: 0 auto;
+
+    color: #colors[c_green];
+
+    .navDivCont{
+        display: flex;
+        align-items: center;
+        gap: 0 1em;
+        
+        p{
+            .buttonProps();
+            .add-box-blur();
+
+            padding: 4.5px;
+        }
+
+        .navBtnRandom{
+        
+            .buttonProps();
+            .add-box-blur();
+            
+            width: fit-content;
+            height: 35px;
+    
+            // margin-left: 1em;
+        }
+    }
+
+    
+}

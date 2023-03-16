@@ -1,0 +1,119 @@
+@import url('../../Less/variables.less');
+
+@border-radius: 10px;
+@width: 225px;
+
+.setMarPad{
+     margin: 0;
+     padding: 0;
+}
+
+.contenedor{
+
+     &:hover{
+          border-color: #colors[c_blue];
+          box-shadow: 0 0 10px #colors[c_blue];
+     }
+     
+     position: relative;
+
+     display: flex;
+     flex-direction: column;
+
+     .setMarPad();
+
+     width: @width; 
+     height: fit-content;
+
+     .add-box-blur();
+
+     // box-shadow: 0 0 10px #colors[c_green];
+     border-radius: @border-radius;
+
+     button{
+          position: absolute;
+
+          .setMarPad();
+
+          top: 0;
+          right: 0;
+
+          width: 25px;
+          height: 25px;
+
+          z-index: 1;
+
+          background: none;
+          color: red;
+          border: none;
+
+          font-family: "Get Schwifty";
+          font-size: 1.2em;
+          font-weight: bold;
+          text-shadow: 1px 1px 10px black;
+     }
+
+     .divNameImg{
+          position: relative;
+
+          width: @width;
+          height: @width;
+
+          button{
+               position: absolute;
+               top: 92%;
+               right: 42%;
+
+               font-size: 1.5em;
+               text-shadow: 0px 0px 10px black;
+               
+               z-index: 1;
+
+               width: 36px;
+               height: fit-content;
+          }
+
+          img{
+               width: @width;
+               border-radius: (@border-radius - 1px) (@border-radius - 1px) 0 0;
+          }
+
+          h2{
+               position: absolute;
+               top: 3%;
+               left: 3%;
+
+               max-width: @width - 40px;
+
+               background-color: rgba(0, 0, 0, 0.5);
+               color: #colors[c_green];
+               text-shadow: 1px 1px 10px black;
+               
+               font-size: 1.2em;
+
+               .setMarPad();
+               padding: 3px;
+
+               &:hover{
+                    color: #colors[c_blue];
+               }
+          }
+     }
+
+     .divDesc{
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+          
+          height: 50px;
+
+          h2{
+               margin: auto 10px;
+
+               color: #colors[c_green];
+               text-shadow: 1px 1px 10px black;
+
+               font-size: 1em;
+          }
+     }
+}

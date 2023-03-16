@@ -5,8 +5,8 @@ import validation from "./validation"
 export default function Form({login}){
 
     const [userData, setUserData] = useState({
-        email: '',
-        password: '',
+        email: 'marce@mail.com',
+        password: 'Marcelo1',
     })
 
     const [errors, setErrors] = useState({
@@ -19,7 +19,7 @@ export default function Form({login}){
         const value = event.target.value;
 
         setUserData({...userData, [property]: value});
-        validation({...userData, [property]: value}, errors, setErrors);
+        setErrors(validation({...userData, [property]: value}));
     }
 
     const submitHandle = (event) => {

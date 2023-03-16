@@ -1,8 +1,11 @@
 import style from '../Nav/Nav.module.less';
 import SearchBar from '../SearchBar/SearchBar';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 
 export default function Nav(props) {
+
+    const { pathname } = useLocation();
+
     return (
         <nav className={style.navCont}>
             <div className={style.navDivCont}>
@@ -11,10 +14,14 @@ export default function Nav(props) {
                 <NavLink to={'/about'} style={ ({ isActive }) => ({ textDecoration: 0, })} ><p>About</p></NavLink>
             </div>
 
-            <div className={style.navDivCont}>
-                <SearchBar onSearch = {props.onSearch} />
-                <button className={style.navBtnRandom} onClick={() => props.onAdd()}> RANDOM </button>
-            </div>
+            {
+                pathname === "/home" && 
+                <div className={style.navDivCont}>
+                    <SearchBar onSearch = {props.onSearch} />
+                    <button className={style.navBtnRandom} onClick={() => props.onAdd()}> RANDOM </button>
+                </div>
+            }
+            
 
             <div className={style.navDivCont}>
                 <NavLink to={'/'} style={ ({ isActive }) => ({ textDecoration: 0, })} ><p>Logout</p></NavLink>

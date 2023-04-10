@@ -21,7 +21,6 @@ export default function Nav(props) {
                     <button className={style.navBtnRandom} onClick={() => props.onAdd()}> RANDOM </button>
                 </div>
             }
-            
 
             <div className={style.navDivCont}>
                 <NavLink to={'/'} style={ ({ isActive }) => ({ textDecoration: 0, })} ><p>Logout</p></NavLink>

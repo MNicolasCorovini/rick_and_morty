@@ -7,11 +7,12 @@ export default function Detail(props) {
     const { detailID } = useParams();
     const [character, setCharacter] = useState({});
 
-    const URL_BASE = "https://be-a-rym.up.railway.app/api";
-    const KEY = "46740eb499eb.794e3e4901c71a0f3e91";
+    const URL_BASE = "http://localhost:3001/rickandmorty";
+  // const URL_BASE = "https://be-a-rym.up.railway.app/api";
+  // const KEY = "46740eb499eb.794e3e4901c71a0f3e91";
 
     useEffect(() => {
-        fetch(`${URL_BASE}/character/${detailID}?key=${KEY}`)
+        fetch(`${URL_BASE}/detail/${detailID}`)
           .then((response) => response.json())
           .then((char) => {
             console.log(char);

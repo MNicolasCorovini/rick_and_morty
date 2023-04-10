@@ -10,8 +10,9 @@ import Favorites from './Components/Favorites/Favorites';
 
 function App() {
 
-  const URL_BASE = "https://be-a-rym.up.railway.app/api";
-  const KEY = "46740eb499eb.794e3e4901c71a0f3e91";
+  const URL_BASE = "http://localhost:3001/rickandmorty";
+  // const URL_BASE = "https://be-a-rym.up.railway.app/api";
+  // const KEY = "46740eb499eb.794e3e4901c71a0f3e91";
 
   const { pathname } = useLocation();
   const [characters, setCharacters] = useState([]);
@@ -31,7 +32,7 @@ function App() {
   }
 
   const onSearch = (id) => {
-    fetch(`${URL_BASE}/character/${id}?key=${KEY}`)
+    fetch(`${URL_BASE}/onsearch/${id}`)
     .then((res) => res.json())
     .then(data => {
       if (data.name) setCharacters((oldChar) => [...oldChar, data])
@@ -46,7 +47,7 @@ function App() {
     if (characters.forEach((char) => char.id === randomId)) exist = true;
 
     if(!exist){
-      fetch(`${URL_BASE}/character/${randomId}?key=${KEY}`)
+      fetch(`${URL_BASE}/character/${randomId}`)
       .then((res) => res.json())
       .then(data => {
         setCharacters((oldChar) => [...oldChar, data]);

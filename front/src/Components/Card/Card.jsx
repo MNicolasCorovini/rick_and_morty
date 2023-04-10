@@ -3,10 +3,15 @@ import { connect, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { addToFavorite, deleteToFavorite } from "../../Redux/actions";
 import style from "../Card/Card.module.less";
+import axios from 'axios';
 
 const Card = (props) => {
     const {id, name, species, gender, image, onClose} = props;
     const [isFav, setIsFav] = useState(false);
+
+    const addFavorite = ({id, name, species, gender, image}) => {
+        
+    }
 
     useEffect(() => {
         props.myFavorites.forEach((fav) => {
@@ -46,7 +51,7 @@ const Card = (props) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        addToFavorite: (character) => dispatch(addToFavorite(character)),
+        // addToFavorite: (character) => dispatch(addToFavorite(character)),
         deleteToFavorite: (id) => dispatch(deleteToFavorite(id))
     }
 }
